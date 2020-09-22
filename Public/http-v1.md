@@ -296,7 +296,7 @@ _1 second_
 Name | Type | Mandatory | Description
 ------------ | ------------ | ------------ | ------------
 market | String | **Yes** | Available market. Example: BTC_USDT
-lastId | int | **Yes** | Largest id of last returned result. Example: 5 --> is to receive the response starting from id = 6
+lastId | int | **Yes** | Largest id of last returned result. Example: request deals starting from id equals to 6
 limit | int | **No** | Limit of results. Default: 50 Example: 100
 
 
