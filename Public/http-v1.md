@@ -159,7 +159,7 @@ market | String | **Yes** | Available market. Example: BTC_USDT
     "last": "9419.55",               // Latest deal price
     "volume": "27303.824558",        // Volume in stock
     "deal": "254399191.68843464",    // Volume in money
-    "change": "1.63"                 // Change between open and close price in persentage
+    "change": "1.63"                 // Change between open and close price in percentage
   }
 }
 ```
