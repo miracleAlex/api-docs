@@ -207,8 +207,8 @@ NONE
   "message": "",
   "result": {
     "BTC": {
-      "id": "4f37bc79-f612-4a63-9a81-d37f7f9ff622",         //  Asset id
-      "lastUpdateTimestamp": "2020-07-10T13:20:07.000Z",    // Date of last update
+      "id": "4f37bc79-f612-4a63-9a81-d37f7f9ff622",         // Asset id
+      "lastUpdateTimestamp": "2020-07-10T13:20:07.000Z",    // ISO 8601 time format of last update
       "name": "Bitcoin",                                    // Name of currency
       "canWithdraw": true,                                  // Is currency withdrawable
       "canDeposit": true,                                   // Is currency depositable
