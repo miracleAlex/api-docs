@@ -238,6 +238,8 @@ ___
 ```
 This endpoint retrieves a deposit address of the cryptocurrency.
 
+**Rate limit:** 5 requests per minute
+
 **Parameters:**
 
 Name | Type | Mandatory | Description
@@ -367,6 +369,8 @@ Available statuses:
 }
 ```
 
+
+
 </details>
 
 ___
@@ -457,6 +461,31 @@ Response error codes:
         ]
     },
     "message": "Validation failed"
+}
+```
+Errors for unconfirmed users (without KYC):
+```json5
+{
+    "code": 0,
+    "errors": {
+        "amount": [
+            "This currency has no active pairs or it may have been delisted. Its rate cannot be calculated at the moment.",
+            "Current limit exceeded"
+        ],
+    },
+    "message": "Validation failed"
+}
+```
+Also, fiat currencies can't be withdrawn without KYC:
+```json5
+{
+    "code": 0,
+    "message": "Validation failed",
+    "errors": {
+        "amount": [
+            "Your account must be verified"
+        ]
+    }
 }
 ```
 
@@ -612,6 +641,31 @@ Response error codes:
     "message": "Validation failed"
 }
 ```
+Errors for unconfirmed users (without KYC):
+```json5
+{
+    "code": 0,
+    "errors": {
+        "amount": [
+            "This currency has no active pairs or it may have been delisted. Its rate cannot be calculated at the moment.",
+            "Current limit exceeded"
+        ],
+    },
+    "message": "Validation failed"
+}
+```
+Also, fiat currencies can't be withdrawn without KYC:
+```json5
+{
+    "code": 0,
+    "message": "Validation failed",
+    "errors": {
+        "amount": [
+            "Your account must be verified"
+        ]
+    }
+}
+```
 
 ```json5
 {
@@ -679,7 +733,7 @@ Name | Type | Mandatory | Description
 ------------ | ------------ | ------------ | ------------
 transactionMethod | Number | **Yes** | Method. Example: **1** if need to display deposits / **2** if need to display withdraws
 ticker | String | **No** | Currency's ticker. Example: BTC
-address | String | **No** | Can be used for filtering transactions by specific address.
+address | String | **No** | Can be used for filtering transactions by specific address or memo.
 uniqueId | String | **No** | Can be used for filtering transactions by specific unique id
 limit | Int | **Yes** | LIMIT is a special clause used to limit records a particular query can return. Default: 50, Min: 1, Max: 100
 offset | Int | **Yes** | If you want the request to return entries starting from a particular line, you can use OFFSET clause to tell it where it should start. Default: 0, Min: 0, Max: 10000
@@ -747,7 +801,7 @@ Withdraw status codes:
         {...},
         {...}
     ],
-    "total": 4                                                                                             // total number of  transactions that returns in response
+    "total": 300                                                                                             // total number of  transactions, use this for calculating ‘limit’ and ‘offset'
 }
 
 ```
@@ -897,7 +951,6 @@ Available statuses:
 <details>
 <summary><b>Errors:</b></summary>
 
-```json5
 {
     "code": 0,
     "errors": {
@@ -1064,6 +1117,33 @@ Response error codes:
     "message": "Validation failed"
 }
 ```
+Errors for unconfirmed users (without KYC):
+```json5
+{
+    "code": 0,
+    "errors": {
+        "amount": [
+            "This currency has no active pairs or it may have been delisted. Its rate cannot be calculated at the moment.",
+            "Current limit exceeded"
+        ],
+    },
+    "message": "Validation failed"
+}
+```
+Also, fiat currencies can't be withdrawn without KYC:
+```json5
+{
+    "code": 0,
+    "message": "Validation failed",
+    "errors": {
+        "amount": [
+            "Your account must be verified"
+        ]
+    }
+}
+```
+
+ 
 
 </details>
 
